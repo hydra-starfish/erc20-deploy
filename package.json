@@ -1,0 +1,92 @@
+{
+  "name": "@starfish-finance/starfish-contracts",
+  "version": "1.4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Starfish-Finance/starfish-contracts.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "compile": "hardhat compile",
+    "build": "tsc && copyfiles -u 1 typechain/**/*.d.ts dist/typechain",
+    "test": "NODE_OPTIONS=--openssl-legacy-provider hardhat test",
+    "release": "npx standard-version --message 'chore(release): %s\n\n[skip ci]' --no-verify"
+  },
+  "dependencies": {
+    "@ethersproject/bignumber": "^5.6.2",
+    "@ethersproject/bytes": "^5.6.1",
+    "@ethersproject/units": "^5.6.1",
+    "big.js": "^6.2.0",
+    "bignumber.js": "^9.0.2",
+    "decimal.js": "^10.3.1",
+    "ethers": "^5.6.4",
+    "hardhat": "^2.10.1",
+    "luxon": "^2.3.2"
+  },
+  "devDependencies": {
+    "@chainlink/contracts": "^0.4.1",
+    "@ethersproject/hdnode": "^5.6.2",
+    "@ethersproject/wallet": "^5.6.2",
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.6.0",
+    "@openzeppelin/contracts-upgradeable": "^4.5.2",
+    "@openzeppelin/hardhat-upgrades": "^1.17.0",
+    "@typechain/ethers-v5": "^7.2.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/big.js": "^6.1.3",
+    "@types/chai": "^4.3.1",
+    "@types/lowdb": "^1.0.9",
+    "@types/luxon": "^2.3.1",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^12.20.50",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "chai": "^4.3.6",
+    "chai-bignumber": "^3.0.0",
+    "copyfiles": "^2.4.1",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-promise": "^5.2.0",
+    "eth-sig-util": "^3.0.1",
+    "ethereum-waffle": "^3.4.4",
+    "ethereumjs-util": "^7.1.5",
+    "hardhat-abi-exporter": "^2.9.0",
+    "hardhat-deploy": "^0.11.10",
+    "hardhat-gas-reporter": "^1.0.8",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "lowdb": "^1.0.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "solhint": "^3.3.7",
+    "solidity-coverage": "^0.7.21",
+    "tmp-promise": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "typechain": "^5.2.0",
+    "typescript": "^4.6.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}

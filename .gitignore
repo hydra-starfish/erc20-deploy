@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Hardhat directories
+artifacts
+cache
+typechain
+
+# MacOS Files
+.DS_Store
